@@ -8,7 +8,8 @@ import './App.css';
 import logo from './logo.png';
 
 const client = new ApolloClient({
-  uri: '/graphql'
+  uri: 'http://localhost:5000/graphql'
+  //for heroku...  uri: '/graphql'
 });
 
 class App extends Component {
