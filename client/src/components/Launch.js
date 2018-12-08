@@ -59,10 +59,15 @@ export class Launch extends Component {
                     <span
                       className={classNames({
                         'text-success': launch_success,
-                        'text-danger': !launch_success
+                        'text-danger': launch_success === false,
+                        'text-warning': launch_success === null
                       })}
                     >
-                      {launch_success ? 'Yes' : 'No'}
+                      {launch_success === null
+                        ? 'Future'
+                        : launch_success
+                        ? 'Yes'
+                        : 'No'}
                     </span>
                   </li>
                 </ul>
