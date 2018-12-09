@@ -17,6 +17,9 @@ const LAUNCH_QUERY = gql`
         rocket_name
         rocket_type
       }
+      links {
+        mission_patch_small
+      }
     }
   }
 `;
@@ -34,6 +37,7 @@ export class Launch extends Component {
 
             const {
               mission_name,
+              links: { mission_patch_small },
               flight_number,
               launch_year,
               launch_success,
@@ -46,6 +50,9 @@ export class Launch extends Component {
                   <span className="text-dark">Mission:</span>
                   {mission_name}
                 </h1>
+                <div>
+                  <img src={mission_patch_small} alt="mission patch" />
+                </div>
                 <h4 className="mb-3">Launch Details</h4>
                 <ul className="list-group">
                   <li className="list-group-item">
